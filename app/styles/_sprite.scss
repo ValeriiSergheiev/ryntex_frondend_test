@@ -1,0 +1,177 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$close-mob-name: 'close-mob';
+$close-mob-x: 41px;
+$close-mob-y: 72px;
+$close-mob-offset-x: -41px;
+$close-mob-offset-y: -72px;
+$close-mob-width: 15px;
+$close-mob-height: 15px;
+$close-mob-total-width: 108px;
+$close-mob-total-height: 94px;
+$close-mob-image: '../images/sprite.png';
+$close-mob: (41px, 72px, -41px, -72px, 15px, 15px, 108px, 94px, '../images/sprite.png', 'close-mob', );
+$facebook-name: 'facebook';
+$facebook-x: 0px;
+$facebook-y: 0px;
+$facebook-offset-x: 0px;
+$facebook-offset-y: 0px;
+$facebook-width: 36px;
+$facebook-height: 36px;
+$facebook-total-width: 108px;
+$facebook-total-height: 94px;
+$facebook-image: '../images/sprite.png';
+$facebook: (0px, 0px, 0px, 0px, 36px, 36px, 108px, 94px, '../images/sprite.png', 'facebook', );
+$google-name: 'google';
+$google-x: 36px;
+$google-y: 0px;
+$google-offset-x: -36px;
+$google-offset-y: 0px;
+$google-width: 36px;
+$google-height: 36px;
+$google-total-width: 108px;
+$google-total-height: 94px;
+$google-image: '../images/sprite.png';
+$google: (36px, 0px, -36px, 0px, 36px, 36px, 108px, 94px, '../images/sprite.png', 'google', );
+$instagram-name: 'instagram';
+$instagram-x: 0px;
+$instagram-y: 36px;
+$instagram-offset-x: 0px;
+$instagram-offset-y: -36px;
+$instagram-width: 36px;
+$instagram-height: 36px;
+$instagram-total-width: 108px;
+$instagram-total-height: 94px;
+$instagram-image: '../images/sprite.png';
+$instagram: (0px, 36px, 0px, -36px, 36px, 36px, 108px, 94px, '../images/sprite.png', 'instagram', );
+$menu-mob-name: 'menu-mob';
+$menu-mob-x: 22px;
+$menu-mob-y: 72px;
+$menu-mob-offset-x: -22px;
+$menu-mob-offset-y: -72px;
+$menu-mob-width: 19px;
+$menu-mob-height: 19px;
+$menu-mob-total-width: 108px;
+$menu-mob-total-height: 94px;
+$menu-mob-image: '../images/sprite.png';
+$menu-mob: (22px, 72px, -22px, -72px, 19px, 19px, 108px, 94px, '../images/sprite.png', 'menu-mob', );
+$pinterest-name: 'pinterest';
+$pinterest-x: 36px;
+$pinterest-y: 36px;
+$pinterest-offset-x: -36px;
+$pinterest-offset-y: -36px;
+$pinterest-width: 36px;
+$pinterest-height: 36px;
+$pinterest-total-width: 108px;
+$pinterest-total-height: 94px;
+$pinterest-image: '../images/sprite.png';
+$pinterest: (36px, 36px, -36px, -36px, 36px, 36px, 108px, 94px, '../images/sprite.png', 'pinterest', );
+$search-mob-name: 'search-mob';
+$search-mob-x: 0px;
+$search-mob-y: 72px;
+$search-mob-offset-x: 0px;
+$search-mob-offset-y: -72px;
+$search-mob-width: 22px;
+$search-mob-height: 22px;
+$search-mob-total-width: 108px;
+$search-mob-total-height: 94px;
+$search-mob-image: '../images/sprite.png';
+$search-mob: (0px, 72px, 0px, -72px, 22px, 22px, 108px, 94px, '../images/sprite.png', 'search-mob', );
+$twitter-name: 'twitter';
+$twitter-x: 72px;
+$twitter-y: 0px;
+$twitter-offset-x: -72px;
+$twitter-offset-y: 0px;
+$twitter-width: 36px;
+$twitter-height: 36px;
+$twitter-total-width: 108px;
+$twitter-total-height: 94px;
+$twitter-image: '../images/sprite.png';
+$twitter: (72px, 0px, -72px, 0px, 36px, 36px, 108px, 94px, '../images/sprite.png', 'twitter', );
+$youtube-name: 'youtube';
+$youtube-x: 72px;
+$youtube-y: 36px;
+$youtube-offset-x: -72px;
+$youtube-offset-y: -36px;
+$youtube-width: 36px;
+$youtube-height: 36px;
+$youtube-total-width: 108px;
+$youtube-total-height: 94px;
+$youtube-image: '../images/sprite.png';
+$youtube: (72px, 36px, -72px, -36px, 36px, 36px, 108px, 94px, '../images/sprite.png', 'youtube', );
+$spritesheet-width: 108px;
+$spritesheet-height: 94px;
+$spritesheet-image: '../images/sprite.png';
+$spritesheet-sprites: ($close-mob, $facebook, $google, $instagram, $menu-mob, $pinterest, $search-mob, $twitter, $youtube, );
+$spritesheet: (108px, 94px, '../images/sprite.png', $spritesheet-sprites, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+
+Here are example usages in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+`display: inline-block` sprite:
+<img class="icon-home" />
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
